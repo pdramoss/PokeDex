@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		E591EAC823581DE000C67BAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E591EAC723581DE000C67BAD /* Assets.xcassets */; };
 		E591EACB23581DE000C67BAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E591EAC923581DE000C67BAD /* LaunchScreen.storyboard */; };
 		E591EAD623581DE000C67BAD /* PokeDexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EAD523581DE000C67BAD /* PokeDexTests.swift */; };
+		E591EAE32358385300C67BAD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E591EAE22358385300C67BAD /* Alamofire */; };
+		E591EAE62358388100C67BAD /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = E591EAE52358388100C67BAD /* AlamofireImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E591EAE32358385300C67BAD /* Alamofire in Frameworks */,
+				E591EAE62358388100C67BAD /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +119,10 @@
 			dependencies = (
 			);
 			name = PokeDex;
+			packageProductDependencies = (
+				E591EAE22358385300C67BAD /* Alamofire */,
+				E591EAE52358388100C67BAD /* AlamofireImage */,
+			);
 			productName = PokeDex;
 			productReference = E591EABB23581DDF00C67BAD /* PokeDex.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +173,10 @@
 				Base,
 			);
 			mainGroup = E591EAB223581DDF00C67BAD;
+			packageReferences = (
+				E591EAE12358385300C67BAD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E591EAE42358388100C67BAD /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = E591EABC23581DDF00C67BAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -365,6 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34Z652334Z;
 				INFOPLIST_FILE = PokeDex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pdramoss.PokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -383,6 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34Z652334Z;
 				INFOPLIST_FILE = PokeDex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pdramoss.PokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -469,6 +483,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E591EAE12358385300C67BAD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.9.0;
+			};
+		};
+		E591EAE42358388100C67BAD /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E591EAE22358385300C67BAD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E591EAE12358385300C67BAD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E591EAE52358388100C67BAD /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E591EAE42358388100C67BAD /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E591EAB323581DDF00C67BAD /* Project object */;
 }
