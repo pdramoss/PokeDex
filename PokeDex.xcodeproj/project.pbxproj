@@ -23,6 +23,8 @@
 		E591EAFC235966A300C67BAD /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EAF8235966A300C67BAD /* HomeInteractorTests.swift */; };
 		E591EAFD235966A300C67BAD /* HomeWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EAF9235966A300C67BAD /* HomeWorkerTests.swift */; };
 		E591EAFE235966A300C67BAD /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EAFA235966A300C67BAD /* HomePresenterTests.swift */; };
+		E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0523596DA900C67BAD /* EndPointType.swift */; };
+		E591EB0823596E0200C67BAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0723596E0200C67BAD /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		E591EAF8235966A300C67BAD /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		E591EAF9235966A300C67BAD /* HomeWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerTests.swift; sourceTree = "<group>"; };
 		E591EAFA235966A300C67BAD /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		E591EB0523596DA900C67BAD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		E591EB0723596E0200C67BAD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		E591EABD23581DDF00C67BAD /* PokeDex */ = {
 			isa = PBXGroup;
 			children = (
+				E591EB0023596C4D00C67BAD /* Networking */,
+				E591EAFF23596C2400C67BAD /* Models */,
 				E591EAF62359666E00C67BAD /* Scenes */,
 				E591EABE23581DDF00C67BAD /* AppDelegate.swift */,
 				E591EAC423581DDF00C67BAD /* Main.storyboard */,
@@ -154,6 +160,54 @@
 				E591EAE72359607E00C67BAD /* Home */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E591EAFF23596C2400C67BAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E591EB0023596C4D00C67BAD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E591EB0223596C6500C67BAD /* EndPoint */,
+				E591EB0323596C7000C67BAD /* Manager */,
+				E591EB0423596C7900C67BAD /* Services */,
+				E591EB0123596C5B00C67BAD /* UseCases */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E591EB0123596C5B00C67BAD /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E591EB0223596C6500C67BAD /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				E591EB0723596E0200C67BAD /* API.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		E591EB0323596C7000C67BAD /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E591EB0423596C7900C67BAD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E591EB0523596DA900C67BAD /* EndPointType.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,12 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */,
 				E591EAF0235960D700C67BAD /* HomeRouter.swift in Sources */,
 				E591EABF23581DDF00C67BAD /* AppDelegate.swift in Sources */,
 				E591EAF2235960D700C67BAD /* HomeViewController.swift in Sources */,
 				E591EAEF235960D700C67BAD /* HomeWorker.swift in Sources */,
 				E591EAF3235960D700C67BAD /* HomeInteractor.swift in Sources */,
 				E591EAEE235960D700C67BAD /* HomePresenter.swift in Sources */,
+				E591EB0823596E0200C67BAD /* API.swift in Sources */,
 				E591EAF1235960D700C67BAD /* HomeModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
