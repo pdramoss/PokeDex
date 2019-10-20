@@ -25,6 +25,7 @@
 		E591EAFE235966A300C67BAD /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EAFA235966A300C67BAD /* HomePresenterTests.swift */; };
 		E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0523596DA900C67BAD /* EndPointType.swift */; };
 		E591EB0823596E0200C67BAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0723596E0200C67BAD /* API.swift */; };
+		E5C2C85D235CAFBE00B1DE74 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2C85C235CAFBE00B1DE74 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		E591EAFA235966A300C67BAD /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		E591EB0523596DA900C67BAD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		E591EB0723596E0200C67BAD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E5C2C85C235CAFBE00B1DE74 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +103,12 @@
 		E591EABD23581DDF00C67BAD /* PokeDex */ = {
 			isa = PBXGroup;
 			children = (
+				E591EB09235CAF5B00C67BAD /* PokeDexAssets */,
 				E591EB0023596C4D00C67BAD /* Networking */,
 				E591EAFF23596C2400C67BAD /* Models */,
 				E591EAF62359666E00C67BAD /* Scenes */,
 				E591EABE23581DDF00C67BAD /* AppDelegate.swift */,
 				E591EAC423581DDF00C67BAD /* Main.storyboard */,
-				E591EAC723581DE000C67BAD /* Assets.xcassets */,
 				E591EAC923581DE000C67BAD /* LaunchScreen.storyboard */,
 				E591EACC23581DE000C67BAD /* Info.plist */,
 			);
@@ -208,6 +210,15 @@
 				E591EB0523596DA900C67BAD /* EndPointType.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E591EB09235CAF5B00C67BAD /* PokeDexAssets */ = {
+			isa = PBXGroup;
+			children = (
+				E591EAC723581DE000C67BAD /* Assets.xcassets */,
+				E5C2C85C235CAFBE00B1DE74 /* Theme.swift */,
+			);
+			path = PokeDexAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +337,7 @@
 				E591EAEF235960D700C67BAD /* HomeWorker.swift in Sources */,
 				E591EAF3235960D700C67BAD /* HomeInteractor.swift in Sources */,
 				E591EAEE235960D700C67BAD /* HomePresenter.swift in Sources */,
+				E5C2C85D235CAFBE00B1DE74 /* Theme.swift in Sources */,
 				E591EB0823596E0200C67BAD /* API.swift in Sources */,
 				E591EAF1235960D700C67BAD /* HomeModels.swift in Sources */,
 			);
