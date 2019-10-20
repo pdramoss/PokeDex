@@ -14,13 +14,44 @@
                     <view key="view" contentMode="scaleToFill" id="JBJ-L2-8xX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCf-8L-AQc">
+                                <rect key="frame" x="28" y="72" width="358" height="760"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Lnv-AA-Di4">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-wh-tTG">
+                                        <rect key="frame" x="0.0" y="56" width="358" height="704"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Lnv-AA-Di4" secondAttribute="trailing" id="1nF-zZ-ghe"/>
+                                    <constraint firstItem="CWO-wh-tTG" firstAttribute="top" secondItem="Lnv-AA-Di4" secondAttribute="bottom" id="LCi-kr-e5M"/>
+                                    <constraint firstItem="Lnv-AA-Di4" firstAttribute="top" secondItem="kCf-8L-AQc" secondAttribute="top" id="RBG-hl-NlN"/>
+                                    <constraint firstAttribute="trailing" secondItem="CWO-wh-tTG" secondAttribute="trailing" id="Ta0-5Z-as6"/>
+                                    <constraint firstItem="Lnv-AA-Di4" firstAttribute="leading" secondItem="kCf-8L-AQc" secondAttribute="leading" id="V2N-4g-cMm"/>
+                                    <constraint firstAttribute="bottom" secondItem="CWO-wh-tTG" secondAttribute="bottom" id="Xjf-lM-5yX"/>
+                                    <constraint firstItem="CWO-wh-tTG" firstAttribute="leading" secondItem="kCf-8L-AQc" secondAttribute="leading" id="pTF-0Q-vgk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oAI-2R-FBL" firstAttribute="bottom" secondItem="kCf-8L-AQc" secondAttribute="bottom" constant="30" id="8Rz-ha-BFA"/>
+                            <constraint firstItem="oAI-2R-FBL" firstAttribute="trailing" secondItem="kCf-8L-AQc" secondAttribute="trailing" constant="28" id="HeX-4e-5Kd"/>
+                            <constraint firstItem="kCf-8L-AQc" firstAttribute="top" secondItem="oAI-2R-FBL" secondAttribute="top" constant="28" id="LJ8-PU-ANe"/>
+                            <constraint firstItem="kCf-8L-AQc" firstAttribute="leading" secondItem="oAI-2R-FBL" secondAttribute="leading" constant="28" id="iDL-Ct-ie7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oAI-2R-FBL"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHl-Ee-cog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="144"/>
+            <point key="canvasLocation" x="200.00000000000003" y="143.97321428571428"/>
         </scene>
     </scenes>
 </document>

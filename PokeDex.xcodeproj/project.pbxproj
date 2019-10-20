@@ -25,7 +25,7 @@
 		E591EAFE235966A300C67BAD /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EAFA235966A300C67BAD /* HomePresenterTests.swift */; };
 		E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0523596DA900C67BAD /* EndPointType.swift */; };
 		E591EB0823596E0200C67BAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0723596E0200C67BAD /* API.swift */; };
-		E5C2C85D235CAFBE00B1DE74 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2C85C235CAFBE00B1DE74 /* Theme.swift */; };
+		E5C2C85D235CAFBE00B1DE74 /* Theme-PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,7 @@
 		E591EAFA235966A300C67BAD /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		E591EB0523596DA900C67BAD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		E591EB0723596E0200C67BAD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		E5C2C85C235CAFBE00B1DE74 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme-PokemonType.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				E591EAC723581DE000C67BAD /* Assets.xcassets */,
-				E5C2C85C235CAFBE00B1DE74 /* Theme.swift */,
+				E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */,
 			);
 			path = PokeDexAssets;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				E591EAEF235960D700C67BAD /* HomeWorker.swift in Sources */,
 				E591EAF3235960D700C67BAD /* HomeInteractor.swift in Sources */,
 				E591EAEE235960D700C67BAD /* HomePresenter.swift in Sources */,
-				E5C2C85D235CAFBE00B1DE74 /* Theme.swift in Sources */,
+				E5C2C85D235CAFBE00B1DE74 /* Theme-PokemonType.swift in Sources */,
 				E591EB0823596E0200C67BAD /* API.swift in Sources */,
 				E591EAF1235960D700C67BAD /* HomeModels.swift in Sources */,
 			);
