@@ -28,13 +28,16 @@
 		E5C2C85D235CAFBE00B1DE74 /* Theme-PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */; };
 		E5D5A2FC235D513800DA6D92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A2FB235D513800DA6D92 /* SceneDelegate.swift */; };
 		E5D5A301235E213C00DA6D92 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A300235E213C00DA6D92 /* Router.swift */; };
-		E5D5A303235E2FED00DA6D92 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A302235E2FED00DA6D92 /* Result.swift */; };
 		E5D5A307235E54C200DA6D92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A306235E54C200DA6D92 /* NetworkManager.swift */; };
 		E5D5A309235E596300DA6D92 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A308235E596300DA6D92 /* HTTPMethod.swift */; };
 		E5D5A30E235E959A00DA6D92 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A30D235E959A00DA6D92 /* JSONParameterEncoder.swift */; };
 		E5D5A310235E95E100DA6D92 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A30F235E95E100DA6D92 /* ParameterEncoding.swift */; };
 		E5D5A312235E981800DA6D92 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A311235E981800DA6D92 /* URLParameterEncoder.swift */; };
 		E5D5A314235E99E500DA6D92 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A313235E99E500DA6D92 /* HTTPTask.swift */; };
+		E5D5A317235F5ACD00DA6D92 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A316235F5ACD00DA6D92 /* BasicViewController.swift */; };
+		E5D5A319235F70DB00DA6D92 /* AllPokemonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A318235F70DB00DA6D92 /* AllPokemonUseCase.swift */; };
+		E5D5A31B235F70ED00DA6D92 /* BasicUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A31A235F70ED00DA6D92 /* BasicUseCase.swift */; };
+		E5D5A31D235F75AE00DA6D92 /* NetworkManager-Pokemons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A31C235F75AE00DA6D92 /* NetworkManager-Pokemons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,13 +74,16 @@
 		E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme-PokemonType.swift"; sourceTree = "<group>"; };
 		E5D5A2FB235D513800DA6D92 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E5D5A300235E213C00DA6D92 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		E5D5A302235E2FED00DA6D92 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E5D5A306235E54C200DA6D92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E5D5A308235E596300DA6D92 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		E5D5A30D235E959A00DA6D92 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		E5D5A30F235E95E100DA6D92 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		E5D5A311235E981800DA6D92 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		E5D5A313235E99E500DA6D92 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		E5D5A316235F5ACD00DA6D92 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		E5D5A318235F70DB00DA6D92 /* AllPokemonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonUseCase.swift; sourceTree = "<group>"; };
+		E5D5A31A235F70ED00DA6D92 /* BasicUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicUseCase.swift; sourceTree = "<group>"; };
+		E5D5A31C235F75AE00DA6D92 /* NetworkManager-Pokemons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager-Pokemons.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 		E591EAF62359666E00C67BAD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E5D5A315235F5AB700DA6D92 /* Basic */,
 				E591EAE72359607E00C67BAD /* Home */,
 			);
 			path = Scenes;
@@ -203,6 +210,8 @@
 		E591EB0123596C5B00C67BAD /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				E5D5A318235F70DB00DA6D92 /* AllPokemonUseCase.swift */,
+				E5D5A31A235F70ED00DA6D92 /* BasicUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -218,8 +227,8 @@
 		E591EB0323596C7000C67BAD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E5D5A302235E2FED00DA6D92 /* Result.swift */,
 				E5D5A306235E54C200DA6D92 /* NetworkManager.swift */,
+				E5D5A31C235F75AE00DA6D92 /* NetworkManager-Pokemons.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -262,6 +271,14 @@
 				E5D5A311235E981800DA6D92 /* URLParameterEncoder.swift */,
 			);
 			path = Encoding;
+			sourceTree = "<group>";
+		};
+		E5D5A315235F5AB700DA6D92 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				E5D5A316235F5ACD00DA6D92 /* BasicViewController.swift */,
+			);
+			path = Basic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,9 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D5A319235F70DB00DA6D92 /* AllPokemonUseCase.swift in Sources */,
 				E5D5A30E235E959A00DA6D92 /* JSONParameterEncoder.swift in Sources */,
+				E5D5A317235F5ACD00DA6D92 /* BasicViewController.swift in Sources */,
 				E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */,
-				E5D5A303235E2FED00DA6D92 /* Result.swift in Sources */,
 				E5D5A310235E95E100DA6D92 /* ParameterEncoding.swift in Sources */,
 				E591EAF0235960D700C67BAD /* HomeRouter.swift in Sources */,
 				E591EABF23581DDF00C67BAD /* AppDelegate.swift in Sources */,
@@ -385,9 +403,11 @@
 				E5D5A312235E981800DA6D92 /* URLParameterEncoder.swift in Sources */,
 				E591EAEF235960D700C67BAD /* HomeWorker.swift in Sources */,
 				E591EAF3235960D700C67BAD /* HomeInteractor.swift in Sources */,
+				E5D5A31B235F70ED00DA6D92 /* BasicUseCase.swift in Sources */,
 				E5D5A309235E596300DA6D92 /* HTTPMethod.swift in Sources */,
 				E591EAEE235960D700C67BAD /* HomePresenter.swift in Sources */,
 				E5D5A2FC235D513800DA6D92 /* SceneDelegate.swift in Sources */,
+				E5D5A31D235F75AE00DA6D92 /* NetworkManager-Pokemons.swift in Sources */,
 				E5D5A307235E54C200DA6D92 /* NetworkManager.swift in Sources */,
 				E5C2C85D235CAFBE00B1DE74 /* Theme-PokemonType.swift in Sources */,
 				E591EB0823596E0200C67BAD /* API.swift in Sources */,

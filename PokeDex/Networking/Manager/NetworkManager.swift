@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum NetworkResponse: String, Error {
+public enum NetworkResponseError: String, Error {
     case authenticationError = "You need to be authenticated first."
     case badRequest = "Bad request"
     case outdated = "The url you requested is outdated."
@@ -20,7 +20,7 @@ public enum NetworkResponse: String, Error {
 }
 
 protocol NetworkManagerProtocol {
-    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool,NetworkResponse>
+    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool,NetworkResponseError>
 }
 
 struct NetworkManager: NetworkManagerProtocol {
@@ -28,18 +28,18 @@ struct NetworkManager: NetworkManagerProtocol {
     
     func load<T: Decodable> (data: Data?, as type: T.Type = T.self) throws -> T {
         guard let data = data else {
-            throw NetworkResponse.notDecodeData
+            throw NetworkResponseError.notDecodeData
         }
         
         do {
             let decoder = JSONDecoder()
             return try decoder.decode(T.self, from: data)
         } catch {
-            throw NetworkResponse.notParseData
+            throw NetworkResponseError.notParseData
         }
     }
     
-    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool, NetworkResponse> {
+    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool, NetworkResponseError> {
         switch response.statusCode {
         case 200...299: return .success(true)
         case 401...499: return .failure(.authenticationError)

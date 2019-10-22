@@ -33,7 +33,7 @@ class Router<EndPoint: EndPointType>: NetworkRouterProtocol {
         } catch {
             completion(nil, nil, error)
         }
-        
+        print("🤬 URL REQUEST: \(urlRequest)")
         dataTask = defaultSession.dataTask(with: urlRequest) { (data, response, error) in
             completion(data, response, error)
         }

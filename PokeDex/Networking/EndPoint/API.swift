@@ -9,11 +9,10 @@
 import Foundation
 
 public enum API {
-    
+    case allPokemon (Int, Int)
 }
 
 extension API: EndPointType {
-    
     private var environmentBaseURL: String {
         return "https://pokeapi.co/api/v2"
     }
@@ -33,7 +32,10 @@ extension API: EndPointType {
     }
     
     var path: String {
-        return ""
+        switch self {
+        case .allPokemon:
+            return "/pokemon/"
+        }
     }
     
     var data: Data? {
@@ -45,7 +47,13 @@ extension API: EndPointType {
     }
     
     var task: HTTPTask {
-        return .request
+        switch self {
+        case .allPokemon(let offset, let limit):
+            return .requestParameters(
+                bodyParameters: nil,
+                bodyEncoding: ParameterEncoding.urlEncoding,
+                urlParameters: ["offset": offset, "limit": limit])
+        }
     }
     
     var headers: HTTPHeaders? {
