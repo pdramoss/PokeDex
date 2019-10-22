@@ -15,6 +15,8 @@ public enum NetworkResponse: String, Error {
     case failed = "Network request failed."
     case noData = "Response returned with no data to decode."
     case unableToDecode = "We could not decode the response."
+    case notDecodeData = "Not decode data"
+    case notParseData = "Not Parse Data"
 }
 
 protocol NetworkManagerProtocol {
@@ -23,6 +25,19 @@ protocol NetworkManagerProtocol {
 
 struct NetworkManager: NetworkManagerProtocol {
     let router = Router<API>()
+    
+    func load<T: Decodable> (data: Data?, as type: T.Type = T.self) throws -> T {
+        guard let data = data else {
+            throw NetworkResponse.notDecodeData
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            throw NetworkResponse.notParseData
+        }
+    }
     
     func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool, NetworkResponse> {
         switch response.statusCode {
