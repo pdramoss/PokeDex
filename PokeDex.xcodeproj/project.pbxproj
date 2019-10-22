@@ -26,6 +26,15 @@
 		E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0523596DA900C67BAD /* EndPointType.swift */; };
 		E591EB0823596E0200C67BAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E591EB0723596E0200C67BAD /* API.swift */; };
 		E5C2C85D235CAFBE00B1DE74 /* Theme-PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */; };
+		E5D5A2FC235D513800DA6D92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A2FB235D513800DA6D92 /* SceneDelegate.swift */; };
+		E5D5A301235E213C00DA6D92 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A300235E213C00DA6D92 /* Router.swift */; };
+		E5D5A303235E2FED00DA6D92 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A302235E2FED00DA6D92 /* Result.swift */; };
+		E5D5A307235E54C200DA6D92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A306235E54C200DA6D92 /* NetworkManager.swift */; };
+		E5D5A309235E596300DA6D92 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A308235E596300DA6D92 /* HTTPMethod.swift */; };
+		E5D5A30E235E959A00DA6D92 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A30D235E959A00DA6D92 /* JSONParameterEncoder.swift */; };
+		E5D5A310235E95E100DA6D92 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A30F235E95E100DA6D92 /* ParameterEncoding.swift */; };
+		E5D5A312235E981800DA6D92 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A311235E981800DA6D92 /* URLParameterEncoder.swift */; };
+		E5D5A314235E99E500DA6D92 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A313235E99E500DA6D92 /* HTTPTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +69,15 @@
 		E591EB0523596DA900C67BAD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		E591EB0723596E0200C67BAD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme-PokemonType.swift"; sourceTree = "<group>"; };
+		E5D5A2FB235D513800DA6D92 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E5D5A300235E213C00DA6D92 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E5D5A302235E2FED00DA6D92 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E5D5A306235E54C200DA6D92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E5D5A308235E596300DA6D92 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E5D5A30D235E959A00DA6D92 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		E5D5A30F235E95E100DA6D92 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		E5D5A311235E981800DA6D92 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		E5D5A313235E99E500DA6D92 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +121,13 @@
 		E591EABD23581DDF00C67BAD /* PokeDex */ = {
 			isa = PBXGroup;
 			children = (
-				E591EB09235CAF5B00C67BAD /* PokeDexAssets */,
-				E591EB0023596C4D00C67BAD /* Networking */,
-				E591EAFF23596C2400C67BAD /* Models */,
-				E591EAF62359666E00C67BAD /* Scenes */,
-				E591EABE23581DDF00C67BAD /* AppDelegate.swift */,
-				E591EAC423581DDF00C67BAD /* Main.storyboard */,
-				E591EAC923581DE000C67BAD /* LaunchScreen.storyboard */,
 				E591EACC23581DE000C67BAD /* Info.plist */,
+				E591EAC423581DDF00C67BAD /* Main.storyboard */,
+				E5D5A2FD235DFEF500DA6D92 /* Launch */,
+				E591EAFF23596C2400C67BAD /* Models */,
+				E591EB0023596C4D00C67BAD /* Networking */,
+				E591EB09235CAF5B00C67BAD /* PokeDexAssets */,
+				E591EAF62359666E00C67BAD /* Scenes */,
 			);
 			path = PokeDex;
 			sourceTree = "<group>";
@@ -174,6 +191,7 @@
 		E591EB0023596C4D00C67BAD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E5D5A30C235E954F00DA6D92 /* Encoding */,
 				E591EB0223596C6500C67BAD /* EndPoint */,
 				E591EB0323596C7000C67BAD /* Manager */,
 				E591EB0423596C7900C67BAD /* Services */,
@@ -200,6 +218,8 @@
 		E591EB0323596C7000C67BAD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E5D5A302235E2FED00DA6D92 /* Result.swift */,
+				E5D5A306235E54C200DA6D92 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -208,6 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				E591EB0523596DA900C67BAD /* EndPointType.swift */,
+				E5D5A300235E213C00DA6D92 /* Router.swift */,
+				E5D5A308235E596300DA6D92 /* HTTPMethod.swift */,
+				E5D5A313235E99E500DA6D92 /* HTTPTask.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -219,6 +242,26 @@
 				E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */,
 			);
 			path = PokeDexAssets;
+			sourceTree = "<group>";
+		};
+		E5D5A2FD235DFEF500DA6D92 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				E591EABE23581DDF00C67BAD /* AppDelegate.swift */,
+				E591EAC923581DE000C67BAD /* LaunchScreen.storyboard */,
+				E5D5A2FB235D513800DA6D92 /* SceneDelegate.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		E5D5A30C235E954F00DA6D92 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				E5D5A30D235E959A00DA6D92 /* JSONParameterEncoder.swift */,
+				E5D5A30F235E95E100DA6D92 /* ParameterEncoding.swift */,
+				E5D5A311235E981800DA6D92 /* URLParameterEncoder.swift */,
+			);
+			path = Encoding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,13 +373,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D5A30E235E959A00DA6D92 /* JSONParameterEncoder.swift in Sources */,
 				E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */,
+				E5D5A303235E2FED00DA6D92 /* Result.swift in Sources */,
+				E5D5A310235E95E100DA6D92 /* ParameterEncoding.swift in Sources */,
 				E591EAF0235960D700C67BAD /* HomeRouter.swift in Sources */,
 				E591EABF23581DDF00C67BAD /* AppDelegate.swift in Sources */,
+				E5D5A314235E99E500DA6D92 /* HTTPTask.swift in Sources */,
 				E591EAF2235960D700C67BAD /* HomeViewController.swift in Sources */,
+				E5D5A301235E213C00DA6D92 /* Router.swift in Sources */,
+				E5D5A312235E981800DA6D92 /* URLParameterEncoder.swift in Sources */,
 				E591EAEF235960D700C67BAD /* HomeWorker.swift in Sources */,
 				E591EAF3235960D700C67BAD /* HomeInteractor.swift in Sources */,
+				E5D5A309235E596300DA6D92 /* HTTPMethod.swift in Sources */,
 				E591EAEE235960D700C67BAD /* HomePresenter.swift in Sources */,
+				E5D5A2FC235D513800DA6D92 /* SceneDelegate.swift in Sources */,
+				E5D5A307235E54C200DA6D92 /* NetworkManager.swift in Sources */,
 				E5C2C85D235CAFBE00B1DE74 /* Theme-PokemonType.swift in Sources */,
 				E591EB0823596E0200C67BAD /* API.swift in Sources */,
 				E591EAF1235960D700C67BAD /* HomeModels.swift in Sources */,
@@ -510,6 +562,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pdramoss.PokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -529,6 +582,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pdramoss.PokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

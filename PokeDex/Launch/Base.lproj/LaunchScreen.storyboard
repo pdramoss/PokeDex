@@ -15,16 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="BD0-nA-rrz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="Mbl-7k-2Zp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BD0-nA-rrz" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2Ps-ev-MFH"/>
-                            <constraint firstItem="BD0-nA-rrz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Ch6-it-2Qk"/>
-                            <constraint firstAttribute="bottom" secondItem="BD0-nA-rrz" secondAttribute="bottom" id="PhD-4k-amd"/>
-                            <constraint firstAttribute="trailing" secondItem="BD0-nA-rrz" secondAttribute="trailing" id="Rsq-HL-QLq"/>
+                            <constraint firstItem="Mbl-7k-2Zp" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="0bR-Wv-hca"/>
+                            <constraint firstItem="Mbl-7k-2Zp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="OYP-BA-R8T"/>
+                            <constraint firstAttribute="bottom" secondItem="Mbl-7k-2Zp" secondAttribute="bottom" id="eas-by-oGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Mbl-7k-2Zp" secondAttribute="trailing" id="g8t-up-sPg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="375" height="811"/>
+        <image name="background2" width="375" height="812"/>
     </resources>
 </document>

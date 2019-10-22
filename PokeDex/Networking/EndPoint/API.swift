@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 public enum API {
     
@@ -37,17 +36,19 @@ extension API: EndPointType {
         return ""
     }
     
+    var data: Data? {
+        return nil
+    }
+    
     var httpMethod: HTTPMethod {
         return .get
     }
     
-    var parameters: Parameters? {
-        return nil
+    var task: HTTPTask {
+        return .request
     }
     
     var headers: HTTPHeaders? {
-        return nil
+        return ["Content-Type": "application/json"]
     }
-    
-    
 }
