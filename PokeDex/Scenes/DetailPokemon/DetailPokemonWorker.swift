@@ -12,7 +12,33 @@
 
 import UIKit
 
-class DetailPokemonWorker {
-    func doSomeWork() {
+protocol DetailPokemonWorkerProtocol: class {
+    func fetchPokemon(id: Int, completion: @escaping(Result<PokemonResponse, Error>) -> Void)
+    func fetchImage(id: Int, completion: @escaping(Result<UIImage?, Error>) -> Void)
+}
+
+class DetailPokemonWorker: DetailPokemonWorkerProtocol {
+    var networkManager = NetworkManager()
+    
+    func fetchPokemon(id: Int, completion: @escaping(Result<PokemonResponse, Error>) -> Void) {
+        networkManager.getPokemon(id: id) { (response) in
+            switch response {
+            case .success(let pokemon):
+                completion(.success(pokemon))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchImage(id: Int, completion: @escaping (Result<UIImage?, Error>) -> Void) {
+        networkManager.getFrontDefaultImage(id: id) { (response) in
+            switch response {
+            case .success(let image):
+                completion(.success(image))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

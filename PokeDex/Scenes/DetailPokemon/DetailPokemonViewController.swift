@@ -13,7 +13,9 @@
 import UIKit
 
 protocol DetailPokemonDisplayLogic: class {
-    func displaySomething(viewModel: DetailPokemonScene.Something.ViewModel)
+    func displayImage(viewModel: DetailPokemonScene.LoadImage.ViewModel)
+    func displayInitialData(viewModel: DetailPokemonScene.Load.ViewModel)
+    func displayMessageError(error: Error)
 }
 
 class DetailPokemonViewController: UIViewController {
@@ -21,6 +23,7 @@ class DetailPokemonViewController: UIViewController {
     var name: String = String()
     var interactor: DetailPokemonBusinessLogic?
     var router: (NSObjectProtocol & DetailPokemonRoutingLogic & DetailPokemonDataPassing)?
+    var model: PokemonResponse?
     
     // MARK: Object lifecycle
     
@@ -29,9 +32,11 @@ class DetailPokemonViewController: UIViewController {
         let interactor = DetailPokemonInteractor()
         let presenter = DetailPokemonPresenter()
         let router = DetailPokemonRouter()
+        let worker = DetailPokemonWorker()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.worker = worker
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
@@ -42,17 +47,25 @@ class DetailPokemonViewController: UIViewController {
         super.viewDidLoad()
         title = name.uppercased()
         setup()
-        doSomething()
+        loadInitialData()
     }
     
-    func doSomething() {
-        let request = DetailPokemonScene.Something.Request()
-        interactor?.doSomething(request: request)
+    func loadInitialData() {
+        interactor?.doLoadInitialData(request: DetailPokemonScene.Load.Request(id: self.id))
+        interactor?.doLoadImageData(request: DetailPokemonScene.LoadImage.Request(id: self.id))
     }
 }
 
 extension DetailPokemonViewController: DetailPokemonDisplayLogic {
-    func displaySomething(viewModel: DetailPokemonScene.Something.ViewModel) {
+    func displayInitialData(viewModel: DetailPokemonScene.Load.ViewModel) {
+        self.model = viewModel.pokemon
+    }
+    
+    func displayImage(viewModel: DetailPokemonScene.LoadImage.ViewModel) {
+        
+    }
+    
+    func displayMessageError(error: Error) {
         
     }
 }

@@ -13,25 +13,37 @@
 import UIKit
 
 protocol DetailPokemonBusinessLogic {
-    func doSomething(request: DetailPokemonScene.Something.Request)
+    func doLoadInitialData(request: DetailPokemonScene.Load.Request)
+    func doLoadImageData(request: DetailPokemonScene.LoadImage.Request)
 }
 
 protocol DetailPokemonDataStore {
-    //var name: String { get set }
+    
 }
 
 class DetailPokemonInteractor: DetailPokemonBusinessLogic, DetailPokemonDataStore {
     var presenter: DetailPokemonPresentationLogic?
-    var worker: DetailPokemonWorker?
-    //var name: String = ""
+    var worker: DetailPokemonWorkerProtocol?
     
-    // MARK: Do something
+    func doLoadInitialData(request: DetailPokemonScene.Load.Request) {
+        worker?.fetchPokemon(id: request.id, completion: { [weak self] (response) in
+            switch response {
+            case .success(let pokemon):
+                self?.presenter?.presentPokemon(response: DetailPokemonScene.Load.Response(pokemon: pokemon))
+            case .failure(let error):
+                self?.presenter?.presentMessageError(error: error)
+            }
+        })
+    }
     
-    func doSomething(request: DetailPokemonScene.Something.Request) {
-        worker = DetailPokemonWorker()
-        worker?.doSomeWork()
-        
-        let response = DetailPokemonScene.Something.Response()
-        presenter?.presentSomething(response: response)
+    func doLoadImageData(request: DetailPokemonScene.LoadImage.Request) {
+        worker?.fetchImage(id: request.id, completion: { [weak self] (response) in
+            switch response {
+            case .success(let image):
+                self?.presenter?.presentImage(response: DetailPokemonScene.LoadImage.Response(image: image))
+            case .failure(let error):
+                self?.presenter?.presentMessageError(error: error)
+            }
+        })
     }
 }

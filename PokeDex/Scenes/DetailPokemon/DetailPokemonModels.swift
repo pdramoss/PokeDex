@@ -15,12 +15,27 @@ import UIKit
 enum DetailPokemonScene {
     // MARK: Use cases
     
-    enum Something {
+    enum Load {
         struct Request {
+            var id: Int
         }
         struct Response {
+            var pokemon: PokemonResponse
         }
         struct ViewModel {
+            var pokemon: PokemonResponse
+        }
+    }
+    
+    enum LoadImage {
+        struct Request {
+            var id: Int
+        }
+        struct Response {
+            var image: UIImage?
+        }
+        struct ViewModel {
+            var image: UIImage?
         }
     }
 }

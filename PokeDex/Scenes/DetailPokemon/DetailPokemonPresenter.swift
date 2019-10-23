@@ -13,14 +13,23 @@
 import UIKit
 
 protocol DetailPokemonPresentationLogic {
-    func presentSomething(response: DetailPokemonScene.Something.Response)
+    func presentPokemon(response: DetailPokemonScene.Load.Response)
+    func presentImage(response: DetailPokemonScene.LoadImage.Response)
+    func presentMessageError(error: Error)
 }
 
 class DetailPokemonPresenter: DetailPokemonPresentationLogic {
     weak var viewController: DetailPokemonDisplayLogic?
     
-    func presentSomething(response: DetailPokemonScene.Something.Response) {
-        let viewModel = DetailPokemonScene.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentPokemon(response: DetailPokemonScene.Load.Response) {
+        viewController?.displayInitialData(viewModel: DetailPokemonScene.Load.ViewModel(pokemon: response.pokemon))
+    }
+    
+    func presentImage(response: DetailPokemonScene.LoadImage.Response) {
+        viewController?.displayImage(viewModel: DetailPokemonScene.LoadImage.ViewModel(image: response.image))
+    }
+    
+    func presentMessageError(error: Error) {
+        viewController?.displayMessageError(error: error)
     }
 }
