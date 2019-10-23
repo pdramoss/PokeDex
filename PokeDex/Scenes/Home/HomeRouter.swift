@@ -14,6 +14,7 @@ import UIKit
 
 @objc protocol HomeRoutingLogic {
     //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToDetailPokemon(id: Int)
 }
 
 protocol HomeDataPassing {
@@ -23,4 +24,9 @@ protocol HomeDataPassing {
 class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
+    
+    func routeToDetailPokemon(id: Int) {
+        let detailPokemon = DetailPokemonViewController()
+        viewController?.navigationController?.pushViewController(detailPokemon, animated: true)
+    }
 }
