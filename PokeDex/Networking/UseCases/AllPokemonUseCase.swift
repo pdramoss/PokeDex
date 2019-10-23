@@ -12,10 +12,5 @@ struct AllPokemonResponse: Codable {
     var count: Int
     var next: String?
     var previous: String?
-    var results: [SimplePokemonResponse]
-}
-
-struct SimplePokemonResponse: Codable {
-    var name: String
-    var url: String
+    var results: [BasicAPIResponse]
 }

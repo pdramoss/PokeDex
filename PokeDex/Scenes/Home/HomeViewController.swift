@@ -13,7 +13,7 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    var pokemons: [SimplePokemonResponse] { get set }
+    var pokemons: [BasicAPIResponse] { get set }
     func displayInitialData(viewModel: HomeScene.Load.ViewModel)
     func displayMessageError(error: Error)
 }
@@ -21,7 +21,7 @@ protocol HomeDisplayLogic: class {
 class HomeViewController: UITableViewController {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
-    var pokemons: [SimplePokemonResponse] = []
+    var pokemons: [BasicAPIResponse] = []
     
     // MARK: Setup
     

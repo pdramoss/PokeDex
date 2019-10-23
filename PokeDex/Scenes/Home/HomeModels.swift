@@ -21,10 +21,10 @@ enum HomeScene {
             var limit: Int
         }
         struct Response {
-            var pokemons: [SimplePokemonResponse]
+            var pokemons: [BasicAPIResponse]
         }
         struct ViewModel {
-            var pokemons: [SimplePokemonResponse]
+            var pokemons: [BasicAPIResponse]
         }
     }
 }

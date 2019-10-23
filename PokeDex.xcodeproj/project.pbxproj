@@ -38,6 +38,8 @@
 		E5D5A339235FD2F300DA6D92 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A335235FD2F300DA6D92 /* HomeInteractorTests.swift */; };
 		E5D5A33A235FD2F300DA6D92 /* HomeWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A336235FD2F300DA6D92 /* HomeWorkerTests.swift */; };
 		E5D5A33B235FD2F300DA6D92 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A337235FD2F300DA6D92 /* HomePresenterTests.swift */; };
+		E5D5A33F235FE81100DA6D92 /* BasicAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A33E235FE81100DA6D92 /* BasicAPIResponse.swift */; };
+		E5D5A341235FE90F00DA6D92 /* PokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A340235FE90F00DA6D92 /* PokemonResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		E5D5A335235FD2F300DA6D92 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		E5D5A336235FD2F300DA6D92 /* HomeWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerTests.swift; sourceTree = "<group>"; };
 		E5D5A337235FD2F300DA6D92 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		E5D5A33E235FE81100DA6D92 /* BasicAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAPIResponse.swift; sourceTree = "<group>"; };
+		E5D5A340235FE90F00DA6D92 /* PokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 		E591EAFF23596C2400C67BAD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E5D5A342235FEA4400DA6D92 /* Pokemon */,
+				E5D5A33E235FE81100DA6D92 /* BasicAPIResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +285,14 @@
 				E5D5A337235FD2F300DA6D92 /* HomePresenterTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E5D5A342235FEA4400DA6D92 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				E5D5A340235FE90F00DA6D92 /* PokemonResponse.swift */,
+			);
+			path = Pokemon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,12 +412,14 @@
 				E5D5A327235FD19F00DA6D92 /* HomeRouter.swift in Sources */,
 				E5D5A329235FD19F00DA6D92 /* HomeViewController.swift in Sources */,
 				E5D5A310235E95E100DA6D92 /* ParameterEncoding.swift in Sources */,
+				E5D5A341235FE90F00DA6D92 /* PokemonResponse.swift in Sources */,
 				E591EABF23581DDF00C67BAD /* AppDelegate.swift in Sources */,
 				E5D5A314235E99E500DA6D92 /* HTTPTask.swift in Sources */,
 				E5D5A301235E213C00DA6D92 /* Router.swift in Sources */,
 				E5D5A312235E981800DA6D92 /* URLParameterEncoder.swift in Sources */,
 				E5D5A31B235F70ED00DA6D92 /* BasicUseCase.swift in Sources */,
 				E5D5A326235FD19F00DA6D92 /* HomeWorker.swift in Sources */,
+				E5D5A33F235FE81100DA6D92 /* BasicAPIResponse.swift in Sources */,
 				E5D5A309235E596300DA6D92 /* HTTPMethod.swift in Sources */,
 				E5D5A325235FD19F00DA6D92 /* HomePresenter.swift in Sources */,
 				E5D5A2FC235D513800DA6D92 /* SceneDelegate.swift in Sources */,

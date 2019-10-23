@@ -46,7 +46,7 @@ class HomeInteractorTests: XCTestCase {
     }
     
     class HomeWorkerSpy: HomeWorkerProtocol {
-        func fetchPokemons(offset: Int, limit: Int, completion: @escaping (Result<[SimplePokemonResponse], Error>) -> Void) {
+        func fetchPokemons(offset: Int, limit: Int, completion: @escaping (Result<[BasicAPIResponse], Error>) -> Void) {
             if limit == 900 && offset == 0 {
                 completion(.success([]))
             } else {

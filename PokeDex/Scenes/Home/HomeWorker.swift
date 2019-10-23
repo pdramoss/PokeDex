@@ -13,13 +13,13 @@
 import UIKit
 
 protocol HomeWorkerProtocol: class {
-    func fetchPokemons(offset: Int, limit: Int, completion: @escaping(Result<[SimplePokemonResponse], Error>) -> Void)
+    func fetchPokemons(offset: Int, limit: Int, completion: @escaping(Result<[BasicAPIResponse], Error>) -> Void)
 }
 
 class HomeWorker: HomeWorkerProtocol {
     var networkManager = NetworkManager()
     
-    func fetchPokemons(offset: Int, limit: Int, completion: @escaping(Result<[SimplePokemonResponse], Error>) -> Void) {
+    func fetchPokemons(offset: Int, limit: Int, completion: @escaping(Result<[BasicAPIResponse], Error>) -> Void) {
         networkManager.getAllPokemons(offset: offset, limit: limit) { (response) in
             switch response {
             case .success(let all):

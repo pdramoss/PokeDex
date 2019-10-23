@@ -34,7 +34,7 @@ class HomePresenterTests: XCTestCase {
     
     class HomeDisplayLogicSpy: HomeDisplayLogic {
         
-        var pokemons: [SimplePokemonResponse] = []
+        var pokemons: [BasicAPIResponse] = []
         var displayInitialDataCalled = false
         var displayMessageErrorCalled = false
         
