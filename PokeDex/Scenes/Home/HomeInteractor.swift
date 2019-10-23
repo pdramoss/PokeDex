@@ -17,13 +17,12 @@ protocol HomeBusinessLogic {
 }
 
 protocol HomeDataStore {
-    //var name: String { get set }
+    
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
     var worker: HomeWorkerProtocol?
-    //var name: String = ""
     
     // MARK: Do something
     

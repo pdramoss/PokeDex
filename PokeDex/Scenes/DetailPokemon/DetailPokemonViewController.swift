@@ -17,6 +17,8 @@ protocol DetailPokemonDisplayLogic: class {
 }
 
 class DetailPokemonViewController: UIViewController {
+    var id: Int = -1
+    var name: String = String()
     var interactor: DetailPokemonBusinessLogic?
     var router: (NSObjectProtocol & DetailPokemonRoutingLogic & DetailPokemonDataPassing)?
     
@@ -38,6 +40,7 @@ class DetailPokemonViewController: UIViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = name.uppercased()
         setup()
         doSomething()
     }
@@ -51,5 +54,11 @@ class DetailPokemonViewController: UIViewController {
 extension DetailPokemonViewController: DetailPokemonDisplayLogic {
     func displaySomething(viewModel: DetailPokemonScene.Something.ViewModel) {
         
+    }
+}
+
+extension DetailPokemonViewController {
+    static var identifier: String {
+        return "DetailPokemonViewController"
     }
 }

@@ -105,12 +105,12 @@ extension HomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let _ = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
-        
+        let pokemon = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
+        self.router?.routeToDetailPokemon(id: pokemon.id, name: pokemon.name)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
     }
 }
 

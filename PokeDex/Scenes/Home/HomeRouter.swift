@@ -13,8 +13,7 @@
 import UIKit
 
 @objc protocol HomeRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    func routeToDetailPokemon(id: Int)
+    func routeToDetailPokemon(id: Int, name: String)
 }
 
 protocol HomeDataPassing {
@@ -25,8 +24,11 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
     
-    func routeToDetailPokemon(id: Int) {
-        let detailPokemon = DetailPokemonViewController()
-        viewController?.navigationController?.pushViewController(detailPokemon, animated: true)
+    func routeToDetailPokemon(id: Int, name: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailPokemonViewController = storyboard.instantiateViewController(withIdentifier: DetailPokemonViewController.identifier) as? DetailPokemonViewController else { return }
+        detailPokemonViewController.id = id
+        detailPokemonViewController.name = name
+        viewController?.navigationController?.pushViewController(detailPokemonViewController, animated: true)
     }
 }
