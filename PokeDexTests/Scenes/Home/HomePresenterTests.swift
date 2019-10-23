@@ -22,26 +22,29 @@ class HomePresenterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        setupHomePresenter()
+        sut = HomePresenter()
     }
     
     override func tearDown() {
         super.tearDown()
-    }
-    
-    // MARK: Test setup
-    
-    func setupHomePresenter() {
-        sut = HomePresenter()
+        sut = nil
     }
     
     // MARK: Test doubles
     
     class HomeDisplayLogicSpy: HomeDisplayLogic {
-        var displaySomethingCalled = false
         
-        func displaySomething(viewModel: HomeScene.Something.ViewModel) {
-            displaySomethingCalled = true
+        var pokemons: [SimplePokemonResponse] = []
+        var displayInitialDataCalled = false
+        var displayMessageErrorCalled = false
+        
+        func displayInitialData(viewModel: HomeScene.Load.ViewModel) {
+            self.pokemons = viewModel.pokemons
+            displayInitialDataCalled = true
+        }
+        
+        func displayMessageError(error: Error) {
+            displayMessageErrorCalled = true
         }
     }
     
@@ -51,12 +54,12 @@ class HomePresenterTests: XCTestCase {
         // Given
         let spy = HomeDisplayLogicSpy()
         sut.viewController = spy
-        let response = HomeScene.Something.Response()
+        let response = HomeScene.Load.Response(pokemons: [])
         
         // When
-        sut.presentSomething(response: response)
+        sut.presentAllPokemons(response: response)
         
         // Then
-        XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
+        XCTAssertTrue(spy.displayInitialDataCalled, "presentSomething(response:) should ask the view controller to display the result")
     }
 }

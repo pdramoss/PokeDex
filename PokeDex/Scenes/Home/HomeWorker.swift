@@ -12,7 +12,11 @@
 
 import UIKit
 
-class HomeWorker {
+protocol HomeWorkerProtocol: class {
+    func fetchPokemons(offset: Int, limit: Int, completion: @escaping(Result<[SimplePokemonResponse], Error>) -> Void)
+}
+
+class HomeWorker: HomeWorkerProtocol {
     var networkManager = NetworkManager()
     
     func fetchPokemons(offset: Int, limit: Int, completion: @escaping(Result<[SimplePokemonResponse], Error>) -> Void) {

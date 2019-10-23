@@ -13,38 +13,26 @@
 @testable import PokeDex
 import XCTest
 
-class HomeWorkerTests: XCTestCase
-{
+class HomeWorkerTests: XCTestCase {
   // MARK: Subject under test
   
   var sut: HomeWorker!
   
   // MARK: Test lifecycle
   
-  override func setUp()
-  {
+  override func setUp() {
     super.setUp()
-    setupHomeWorker()
-  }
-  
-  override func tearDown()
-  {
-    super.tearDown()
-  }
-  
-  // MARK: Test setup
-  
-  func setupHomeWorker()
-  {
     sut = HomeWorker()
   }
   
-  // MARK: Test doubles
+  override func tearDown() {
+    super.tearDown()
+    sut = nil
+  }
   
   // MARK: Tests
   
-  func testSomething()
-  {
+  func testSomething() {
     // Given
     
     // When

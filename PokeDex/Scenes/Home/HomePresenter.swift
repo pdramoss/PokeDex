@@ -26,6 +26,6 @@ class HomePresenter: HomePresentationLogic {
     }
     
     func presentMessageError(error: Error) {
-        
+        viewController?.displayMessageError(error: error)
     }
 }

@@ -15,9 +15,10 @@ import UIKit
 protocol HomeDisplayLogic: class {
     var pokemons: [SimplePokemonResponse] { get set }
     func displayInitialData(viewModel: HomeScene.Load.ViewModel)
+    func displayMessageError(error: Error)
 }
 
-class HomeViewController: UITableViewController, HomeDisplayLogic {
+class HomeViewController: UITableViewController {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     var pokemons: [SimplePokemonResponse] = []
@@ -29,9 +30,11 @@ class HomeViewController: UITableViewController, HomeDisplayLogic {
         let interactor = HomeInteractor()
         let presenter = HomePresenter()
         let router = HomeRouter()
+        let worker = HomeWorker()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.worker = worker
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
@@ -49,11 +52,19 @@ class HomeViewController: UITableViewController, HomeDisplayLogic {
         interactor?.doLoadInitialData(request: request)
     }
     
+    
+}
+
+extension HomeViewController: HomeDisplayLogic {
     func displayInitialData(viewModel: HomeScene.Load.ViewModel) {
         self.pokemons = viewModel.pokemons
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    func displayMessageError(error: Error) {
+        
     }
 }
 

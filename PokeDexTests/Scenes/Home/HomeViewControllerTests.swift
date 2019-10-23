@@ -17,39 +17,24 @@ class HomeViewControllerTests: XCTestCase {
     // MARK: Subject under test
     
     var sut: HomeViewController!
-    var window: UIWindow!
     
     // MARK: Test lifecycle
     
     override func setUp() {
         super.setUp()
-        window = UIWindow()
-        setupHomeViewController()
-    }
-    
-    override func tearDown() {
-        window = nil
-        super.tearDown()
-    }
-    
-    // MARK: Test setup
-    
-    func setupHomeViewController() {
         sut = HomeViewController()
     }
     
-    func loadView() {
-        window.addSubview(sut.view)
-        RunLoop.current.run(until: Date())
+    override func tearDown() {
+        super.tearDown()
     }
     
     // MARK: Test doubles
     
     class HomeBusinessLogicSpy: HomeBusinessLogic {
-        var doSomethingCalled = false
-        
-        func doSomething(request: HomeScene.Something.Request) {
-            doSomethingCalled = true
+        var doLoadInitialDataCalled = false
+        func doLoadInitialData(request: HomeScene.Load.Request) {
+            doLoadInitialDataCalled = true
         }
     }
     
@@ -61,21 +46,21 @@ class HomeViewControllerTests: XCTestCase {
         sut.interactor = spy
         
         // When
-        loadView()
+        sut.loadInitialData()
         
         // Then
-        XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
+        XCTAssertTrue(spy.doLoadInitialDataCalled, "viewDidLoad() should ask the interactor to do something")
     }
     
-    func testDisplaySomething() {
-        // Given
-        let viewModel = HomeScene.Something.ViewModel()
-        
-        // When
-        loadView()
-        sut.displaySomething(viewModel: viewModel)
-        
-        // Then
-        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
-    }
+//    func testDisplaySomething() {
+//        // Given
+//        let viewModel = HomeScene.Something.ViewModel()
+//
+//        // When
+//        loadView()
+//        sut.displaySomething(viewModel: viewModel)
+//
+//        // Then
+//        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
+//    }
 }

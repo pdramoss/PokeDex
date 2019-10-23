@@ -22,13 +22,12 @@ protocol HomeDataStore {
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
-    var worker: HomeWorker?
+    var worker: HomeWorkerProtocol?
     //var name: String = ""
     
     // MARK: Do something
     
     func doLoadInitialData(request: HomeScene.Load.Request) {
-        worker = HomeWorker()
         worker?.fetchPokemons(offset: request.offset, limit: request.limit, completion: { [weak self] (response) in
             switch response {
             case .success(let pokemons):

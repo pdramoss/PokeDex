@@ -13,57 +13,62 @@
 @testable import PokeDex
 import XCTest
 
-class HomeInteractorTests: XCTestCase
-{
-  // MARK: Subject under test
-  
-  var sut: HomeInteractor!
-  
-  // MARK: Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    setupHomeInteractor()
-  }
-  
-  override func tearDown()
-  {
-    super.tearDown()
-  }
-  
-  // MARK: Test setup
-  
-  func setupHomeInteractor()
-  {
-    sut = HomeInteractor()
-  }
-  
-  // MARK: Test doubles
-  
-  class HomePresentationLogicSpy: HomePresentationLogic
-  {
-    var presentSomethingCalled = false
+class HomeInteractorTests: XCTestCase {
+    // MARK: Subject under test
     
-    func presentSomething(response: HomeScene.Something.Response)
-    {
-      presentSomethingCalled = true
+    var sut: HomeInteractor!
+    
+    // MARK: Test lifecycle
+    
+    override func setUp() {
+        super.setUp()
+        sut = HomeInteractor()
     }
-  }
-  
-  // MARK: Tests
-  
-  func testDoSomething()
-  {
-    // Given
-    let spy = HomePresentationLogicSpy()
-    sut.presenter = spy
-    let request = HomeScene.Something.Request()
     
-    // When
-    sut.doSomething(request: request)
+    override func tearDown() {
+        super.tearDown()
+        sut = nil
+    }
     
-    // Then
-    XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
-  }
+    // MARK: Test doubles
+    
+    class HomePresentationLogicSpy: HomePresentationLogic {
+        var presentAllPokemonsCalled = false
+        var presentMessageErrorCalled = false
+        
+        func presentAllPokemons(response: HomeScene.Load.Response) {
+            presentAllPokemonsCalled = true
+        }
+        
+        func presentMessageError(error: Error) {
+            presentMessageErrorCalled = true
+        }
+    }
+    
+    class HomeWorkerSpy: HomeWorkerProtocol {
+        func fetchPokemons(offset: Int, limit: Int, completion: @escaping (Result<[SimplePokemonResponse], Error>) -> Void) {
+            if limit == 900 && offset == 0 {
+                completion(.success([]))
+            } else {
+                completion(.failure(NetworkResponseError.failed))
+            }
+        }
+    }
+    
+    // MARK: Tests
+    
+    func testDoSomething() {
+        // Given
+        let spy = HomePresentationLogicSpy()
+        let worker = HomeWorkerSpy()
+        sut.presenter = spy
+        sut.worker = worker
+        let request = HomeScene.Load.Request(offset: 0, limit: 900)
+        
+        // When
+        sut.doLoadInitialData(request: request)
+        
+        // Then
+        XCTAssertTrue(spy.presentAllPokemonsCalled)
+    }
 }
