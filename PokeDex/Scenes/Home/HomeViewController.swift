@@ -22,6 +22,16 @@ class HomeViewController: UITableViewController {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     var pokemons: [BasicAPIResponse] = []
+    var filteredPokemons: [BasicAPIResponse] = []
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: Setup
     
@@ -44,6 +54,7 @@ class HomeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupSearchController()
         loadInitialData()
     }
     
@@ -52,7 +63,18 @@ class HomeViewController: UITableViewController {
         interactor?.doLoadInitialData(request: request)
     }
     
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Pokemon..."
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
     
+    func filterContentForSearchText(_ searchText: String) {
+        filteredPokemons = pokemons.filter({ $0.name.lowercased().contains(searchText.lowercased()) })
+        tableView.reloadData()
+    }
 }
 
 extension HomeViewController: HomeDisplayLogic {
@@ -70,13 +92,21 @@ extension HomeViewController: HomeDisplayLogic {
 
 extension HomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokemons.count
+        return isFiltering ? filteredPokemons.count : pokemons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pokemon = pokemons[indexPath.row]
+        let pokemon = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
         let cell = UITableViewCell()
         cell.textLabel?.text = pokemon.name
         return cell
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        guard let text = searchBar.text else { return }
+        filterContentForSearchText(text)
     }
 }

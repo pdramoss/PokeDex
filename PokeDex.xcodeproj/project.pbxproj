@@ -40,6 +40,7 @@
 		E5D5A33B235FD2F300DA6D92 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A337235FD2F300DA6D92 /* HomePresenterTests.swift */; };
 		E5D5A33F235FE81100DA6D92 /* BasicAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A33E235FE81100DA6D92 /* BasicAPIResponse.swift */; };
 		E5D5A341235FE90F00DA6D92 /* PokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A340235FE90F00DA6D92 /* PokemonResponse.swift */; };
+		E5D5A3442360AC6D00DA6D92 /* PokemonSpritesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A3432360AC6D00DA6D92 /* PokemonSpritesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		E5D5A337235FD2F300DA6D92 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		E5D5A33E235FE81100DA6D92 /* BasicAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAPIResponse.swift; sourceTree = "<group>"; };
 		E5D5A340235FE90F00DA6D92 /* PokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResponse.swift; sourceTree = "<group>"; };
+		E5D5A3432360AC6D00DA6D92 /* PokemonSpritesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSpritesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				E5D5A340235FE90F00DA6D92 /* PokemonResponse.swift */,
+				E5D5A3432360AC6D00DA6D92 /* PokemonSpritesResponse.swift */,
 			);
 			path = Pokemon;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				E5D5A325235FD19F00DA6D92 /* HomePresenter.swift in Sources */,
 				E5D5A2FC235D513800DA6D92 /* SceneDelegate.swift in Sources */,
 				E5D5A31D235F75AE00DA6D92 /* NetworkManager-Pokemons.swift in Sources */,
+				E5D5A3442360AC6D00DA6D92 /* PokemonSpritesResponse.swift in Sources */,
 				E5D5A328235FD19F00DA6D92 /* HomeModels.swift in Sources */,
 				E5D5A307235E54C200DA6D92 /* NetworkManager.swift in Sources */,
 				E5C2C85D235CAFBE00B1DE74 /* Theme-PokemonType.swift in Sources */,
