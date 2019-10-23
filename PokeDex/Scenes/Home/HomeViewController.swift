@@ -59,7 +59,7 @@ class HomeViewController: UITableViewController {
     }
     
     func loadInitialData() {
-        let request = HomeScene.Load.Request(offset: 0, limit: 900)
+        let request = HomeScene.Load.Request(offset: 0, limit: 2000)
         interactor?.doLoadInitialData(request: request)
     }
     
@@ -100,6 +100,11 @@ extension HomeViewController {
         let cell = UITableViewCell()
         cell.textLabel?.text = pokemon.name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pokemon = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
+        print("🥶 POKEMON: \(pokemon.url)")
     }
 }
 

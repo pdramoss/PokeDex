@@ -25,6 +25,7 @@ protocol NetworkManagerProtocol {
 
 struct NetworkManager: NetworkManagerProtocol {
     let router = Router<API>()
+    let routerImage = Router<APIImage>()
     
     func load<T: Decodable> (data: Data?, as type: T.Type = T.self) throws -> T {
         guard let data = data else {
