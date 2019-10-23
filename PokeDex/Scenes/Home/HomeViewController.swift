@@ -53,6 +53,8 @@ class HomeViewController: UITableViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
         setup()
         setupSearchController()
         loadInitialData()
@@ -97,13 +99,18 @@ extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pokemon = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = pokemon.name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier) as? HomeTableViewCell else { return UITableViewCell() }
+        cell.setup(name: pokemon.name, id: pokemon.id)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let _ = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
 
