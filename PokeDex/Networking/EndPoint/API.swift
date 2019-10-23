@@ -10,7 +10,7 @@ import Foundation
 
 public enum API {
     case allPokemon (Int, Int)
-    case pokemon (String)
+    case pokemon (Int)
 }
 
 extension API: EndPointType {
@@ -36,8 +36,8 @@ extension API: EndPointType {
         switch self {
         case .allPokemon:
             return "/pokemon/"
-        case .pokemon(let name):
-            return "/pokemon/\(name)"
+        case .pokemon(let id):
+            return "/pokemon/\(id)"
         }
     }
     

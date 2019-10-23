@@ -103,8 +103,7 @@ extension HomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pokemon = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
-        print("🥶 POKEMON: \(pokemon.url)")
+        let _ = isFiltering ? filteredPokemons[indexPath.row] : pokemons[indexPath.row]
     }
 }
 

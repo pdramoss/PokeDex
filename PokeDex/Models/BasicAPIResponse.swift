@@ -24,4 +24,12 @@ extension BasicAPIResponse {
         name = try container.decode(String.self, forKey: .name)
         url = try container.decode(String.self, forKey: .url)
     }
+    
+    var id: Int {
+        let split = url.split(separator: "/")
+        guard let last = split.last else { return -1 }
+        let text = String(last)
+        return Int(text) ?? -1
+    }
+    
 }

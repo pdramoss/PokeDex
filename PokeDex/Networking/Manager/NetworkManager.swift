@@ -6,7 +6,7 @@
 //  Copyright © 2019 Pedro Ramos. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public enum NetworkResponseError: String, Error {
     case authenticationError = "You need to be authenticated first."
@@ -20,6 +20,7 @@ public enum NetworkResponseError: String, Error {
 }
 
 protocol NetworkManagerProtocol {
+    func getFrontDefaultImage(id: Int, completion: @escaping(Result<UIImage?, Error>) -> Void)
     func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool,NetworkResponseError>
 }
 
@@ -37,6 +38,29 @@ struct NetworkManager: NetworkManagerProtocol {
             return try decoder.decode(T.self, from: data)
         } catch {
             throw NetworkResponseError.notParseData
+        }
+    }
+    
+    func getFrontDefaultImage(id: Int, completion: @escaping(Result<UIImage?, Error>) -> Void) {
+        routerImage.request(.frontDefault(id)) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let data = data else {
+                        completion(.failure(NetworkResponseError.noData))
+                        return
+                    }
+                    let image = UIImage(data: data)
+                    completion(.success(image))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
         }
     }
     

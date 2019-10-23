@@ -10,7 +10,7 @@ import Foundation
 
 protocol PokemonNetworkManagerProtocol {
     func getAllPokemons(offset: Int, limit: Int, completion: @escaping (Result<AllPokemonResponse, Error>) -> Void)
-    func getPokemon(name: String, completion: @escaping(Result<PokemonResponse, Error>) -> Void)
+    func getPokemon(id: Int, completion: @escaping(Result<PokemonResponse, Error>) -> Void)
 }
 
 extension NetworkManager: PokemonNetworkManagerProtocol {
@@ -37,8 +37,8 @@ extension NetworkManager: PokemonNetworkManagerProtocol {
         }
     }
     
-    func getPokemon(name: String, completion: @escaping(Result<PokemonResponse, Error>) -> Void) {
-        router.request(.pokemon(name)) { (data, response, error) in
+    func getPokemon(id: Int, completion: @escaping(Result<PokemonResponse, Error>) -> Void) {
+        router.request(.pokemon(id)) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
             }
