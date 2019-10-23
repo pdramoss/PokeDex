@@ -8,9 +8,13 @@
 
 import Foundation
 
-extension NetworkManager {
+protocol PokemonNetworkManagerProtocol {
+    func getAllPokemons(offset: Int, limit: Int, completion: @escaping (Result<AllPokemonResponse, Error>) -> Void)
+}
+
+extension NetworkManager: PokemonNetworkManagerProtocol {
     
-    func getAllPokemon(offset: Int, limit: Int, completion: @escaping (Result<AllPokemon, Error>) -> Void) {
+    func getAllPokemons(offset: Int, limit: Int, completion: @escaping (Result<AllPokemonResponse, Error>) -> Void) {
         router.request(.allPokemon(offset, limit)) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -20,7 +24,7 @@ extension NetworkManager {
                 switch result {
                 case .success:
                     do {
-                        let allPokemon: AllPokemon = try self.load(data: data)
+                        let allPokemon: AllPokemonResponse = try self.load(data: data)
                         completion(.success(allPokemon))
                     } catch {
                         completion (.failure(error))
