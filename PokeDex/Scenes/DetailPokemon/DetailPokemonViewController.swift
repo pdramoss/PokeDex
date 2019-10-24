@@ -25,6 +25,9 @@ class DetailPokemonViewController: UIViewController {
     var router: (NSObjectProtocol & DetailPokemonRoutingLogic & DetailPokemonDataPassing)?
     var model: PokemonResponse?
     
+    typealias dataCell = (UIImage?, String, String)
+    var data: [dataCell] = []
+    
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var typeImageView: UIImageView!
     @IBOutlet private weak var tableView: UITableView!
@@ -51,6 +54,8 @@ class DetailPokemonViewController: UIViewController {
         super.viewDidLoad()
         title = name.uppercased()
         tableView.layer.cornerRadius = 6.0
+        tableView.delegate = self
+        tableView.dataSource = self
         setup()
         loadInitialData()
     }
@@ -64,9 +69,17 @@ class DetailPokemonViewController: UIViewController {
 extension DetailPokemonViewController: DetailPokemonDisplayLogic {
     func displayInitialData(viewModel: DetailPokemonScene.Load.ViewModel) {
         self.model = viewModel.pokemon
+        data.append( (nil, "ID:", viewModel.pokemon.id.numberWithZeros(number: 10)) )
+        data.append( (nil, "Base Experience:", "\(viewModel.pokemon.baseExperience) EXP" ) )
+        data.append( (nil, "height:", "\(viewModel.pokemon.height) Decimetres") )
+        data.append( (nil, "weight:", "\(viewModel.pokemon.weight) Hectograms") )
+        for item in viewModel.pokemon.types {
+            data.append( (item.pokemonType.typeImage, "TYPE:", item.pokemonType.description) )
+        }
         DispatchQueue.main.async {
             self.view.backgroundColor = viewModel.pokemon.types.first?.pokemonType.color
             self.typeImageView.image = viewModel.pokemon.types.first?.pokemonType.tagImage
+            self.tableView.reloadData()
         }
     }
     
@@ -78,6 +91,31 @@ extension DetailPokemonViewController: DetailPokemonDisplayLogic {
     
     func displayMessageError(error: Error) {
         
+    }
+}
+
+extension DetailPokemonViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = data[indexPath.row]
+        return customCell(item: item)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func customCell(item: dataCell) -> UITableViewCell{
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        cell.imageView?.image = item.0
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        cell.textLabel?.text = item.1.uppercased()
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 16)
+        cell.detailTextLabel?.text = item.2
+        return cell
     }
 }
 
