@@ -24,4 +24,8 @@ extension PokemonTypeResponse {
         slot = try container.decode(Int.self, forKey: .slot)
         type = try container.decode(BasicAPIResponse.self, forKey: .type)
     }
+    
+    var pokemonType: PokemonType {
+        return PokemonType(rawValue: type.name)
+    }
 }

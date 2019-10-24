@@ -59,6 +59,9 @@ class DetailPokemonViewController: UIViewController {
 extension DetailPokemonViewController: DetailPokemonDisplayLogic {
     func displayInitialData(viewModel: DetailPokemonScene.Load.ViewModel) {
         self.model = viewModel.pokemon
+        DispatchQueue.main.async {
+            self.view.backgroundColor = viewModel.pokemon.types.first?.pokemonType.color
+        }
     }
     
     func displayImage(viewModel: DetailPokemonScene.LoadImage.ViewModel) {
