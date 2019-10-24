@@ -25,6 +25,10 @@ class DetailPokemonViewController: UIViewController {
     var router: (NSObjectProtocol & DetailPokemonRoutingLogic & DetailPokemonDataPassing)?
     var model: PokemonResponse?
     
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var typeImageView: UIImageView!
+    @IBOutlet private weak var tableView: UITableView!
+    
     // MARK: Object lifecycle
     
     private func setup() {
@@ -46,6 +50,7 @@ class DetailPokemonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = name.uppercased()
+        tableView.layer.cornerRadius = 6.0
         setup()
         loadInitialData()
     }
@@ -61,11 +66,14 @@ extension DetailPokemonViewController: DetailPokemonDisplayLogic {
         self.model = viewModel.pokemon
         DispatchQueue.main.async {
             self.view.backgroundColor = viewModel.pokemon.types.first?.pokemonType.color
+            self.typeImageView.image = viewModel.pokemon.types.first?.pokemonType.tagImage
         }
     }
     
     func displayImage(viewModel: DetailPokemonScene.LoadImage.ViewModel) {
-        
+        DispatchQueue.main.async {
+            self.imageView.image = viewModel.image
+        }
     }
     
     func displayMessageError(error: Error) {
