@@ -18,6 +18,7 @@ struct PokemonResponse: Codable {
     var weight: Int
     var locationAreaEncounters: String
     var types: [PokemonTypeResponse]
+    var stats: [PokemonStatResponse]
 }
 
 extension PokemonResponse {
@@ -31,6 +32,7 @@ extension PokemonResponse {
         case weight = "weight"
         case locationAreaEncounters = "location_area_encounters"
         case types = "types"
+        case stats = "stats"
     }
     
     init(from decoder: Decoder) throws {
@@ -44,5 +46,6 @@ extension PokemonResponse {
         weight = try container.decode(Int.self, forKey: .weight)
         locationAreaEncounters = try container.decode(String.self, forKey: .locationAreaEncounters)
         types = try container.decode([PokemonTypeResponse].self, forKey: .types)
+        stats = try container.decode([PokemonStatResponse].self, forKey: .stats)
     }
 }

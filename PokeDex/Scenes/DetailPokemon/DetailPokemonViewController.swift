@@ -23,10 +23,11 @@ class DetailPokemonViewController: UIViewController {
     var name: String = String()
     var interactor: DetailPokemonBusinessLogic?
     var router: (NSObjectProtocol & DetailPokemonRoutingLogic & DetailPokemonDataPassing)?
-    var model: PokemonResponse?
     
     typealias dataCell = (UIImage?, String, String)
     var data: [dataCell] = []
+    var content: [String: [dataCell]] = [:]
+    var color: UIColor?
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var typeImageView: UIImageView!
@@ -68,7 +69,6 @@ class DetailPokemonViewController: UIViewController {
 
 extension DetailPokemonViewController: DetailPokemonDisplayLogic {
     func displayInitialData(viewModel: DetailPokemonScene.Load.ViewModel) {
-        self.model = viewModel.pokemon
         data.append( (nil, "ID:", viewModel.pokemon.id.numberWithZeros(number: 10)) )
         data.append( (nil, "Base Experience:", "\(viewModel.pokemon.baseExperience) EXP" ) )
         data.append( (nil, "height:", "\(viewModel.pokemon.height) Decimetres") )
