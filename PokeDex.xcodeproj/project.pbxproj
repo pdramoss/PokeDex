@@ -233,7 +233,7 @@
 		E57C96DD237A0FA900C27101 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E57C96E3237A11FC00C27101 /* BaseViewController.swift */,
+				E5D0905F237A4A32007BD47C /* Base */,
 				E57C96E5237A191100C27101 /* Pokemons */,
 				E57C96E6237A194400C27101 /* Moves */,
 				E57C96E7237A195200C27101 /* Items */,
@@ -471,6 +471,14 @@
 				E5C2C85C235CAFBE00B1DE74 /* Theme-PokemonType.swift */,
 			);
 			path = PokeDexAssets;
+			sourceTree = "<group>";
+		};
+		E5D0905F237A4A32007BD47C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E57C96E3237A11FC00C27101 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E5D5A2FD235DFEF500DA6D92 /* Launch */ = {

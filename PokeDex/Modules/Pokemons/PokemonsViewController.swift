@@ -19,7 +19,7 @@ protocol PokemonsDisplayLogic: class {
 class PokemonsViewController: BaseViewController, PokemonsDisplayLogic {
     var interactor: PokemonsBusinessLogic?
     var router: (NSObjectProtocol & PokemonsRoutingLogic & PokemonsDataPassing)?
-    
+    @IBOutlet private weak var tableView: UITableView!
     // MARK: Setup
     
     private func setup() {
@@ -52,6 +52,7 @@ class PokemonsViewController: BaseViewController, PokemonsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundImage(image: UIImage(named: "background.gradient"))
+        tableView.tableFooterView = UIView()
         setup()
     }
     

@@ -19,6 +19,7 @@ protocol MovesDisplayLogic: class {
 class MovesViewController: BaseViewController, MovesDisplayLogic {
     var interactor: MovesBusinessLogic?
     var router: (NSObjectProtocol & MovesRoutingLogic & MovesDataPassing)?
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: Setup
     
@@ -51,6 +52,8 @@ class MovesViewController: BaseViewController, MovesDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackgroundImage(image: UIImage(named: "background.gradient"))
+        tableView.tableFooterView = UIView()
         setup()
     }
     

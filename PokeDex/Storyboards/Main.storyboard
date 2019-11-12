@@ -15,6 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="cTX-Ae-NQD" kind="relationship" relationship="viewControllers" id="XLp-Eg-urt"/>
@@ -24,14 +25,15 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brc-2j-hDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1713" y="-309"/>
+            <point key="canvasLocation" x="-1704" y="-300"/>
         </scene>
         <!--Items-->
         <scene sceneID="tLo-vY-gTO">
             <objects>
-                <navigationController navigationBarHidden="YES" id="7Ga-jD-Pb0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Items" id="iIT-Fb-kWL"/>
+                <navigationController id="7Ga-jD-Pb0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Items" image="tabbar.items" selectedImage="tabbar.items" id="iIT-Fb-kWL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QfE-by-etw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -42,17 +44,32 @@
             </objects>
             <point key="canvasLocation" x="-536" y="423"/>
         </scene>
-        <!--Items View Controller-->
+        <!--Items-->
         <scene sceneID="Dav-VA-pkn">
             <objects>
                 <viewController storyboardIdentifier="ItemsViewController" id="n3w-JE-NXd" customClass="ItemsViewController" customModule="PokeDex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Bv-bt-HIY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZRx-9w-teJ">
+                                <rect key="frame" x="0.0" y="93" width="414" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="4gf-gR-5M7"/>
+                        <constraints>
+                            <constraint firstItem="ZRx-9w-teJ" firstAttribute="top" secondItem="meQ-U3-BLr" secondAttribute="top" constant="5" id="5bC-8y-mu6"/>
+                            <constraint firstItem="meQ-U3-BLr" firstAttribute="trailing" secondItem="ZRx-9w-teJ" secondAttribute="trailing" id="Itg-9I-Gh1"/>
+                            <constraint firstItem="meQ-U3-BLr" firstAttribute="bottom" secondItem="ZRx-9w-teJ" secondAttribute="bottom" constant="5" id="JOb-bm-ZpX"/>
+                            <constraint firstItem="ZRx-9w-teJ" firstAttribute="leading" secondItem="meQ-U3-BLr" secondAttribute="leading" id="b4j-Ih-j46"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="meQ-U3-BLr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RHG-Ol-VSi"/>
+                    <navigationItem key="navigationItem" title="Items" id="RHG-Ol-VSi"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZRx-9w-teJ" id="beS-cw-Wcj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOK-Eh-53t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,9 +78,10 @@
         <!--Moves-->
         <scene sceneID="Vqx-ib-CFf">
             <objects>
-                <navigationController navigationBarHidden="YES" id="qsE-Ab-To5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Moves" id="AoO-hw-Yj1"/>
+                <navigationController id="qsE-Ab-To5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Moves" image="tabbar.moves" selectedImage="tabbar.moves" id="AoO-hw-Yj1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wie-93-Ai5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -74,17 +92,32 @@
             </objects>
             <point key="canvasLocation" x="-536" y="-300"/>
         </scene>
-        <!--Moves View Controller-->
+        <!--Moves-->
         <scene sceneID="GGM-gV-XCy">
             <objects>
                 <viewController storyboardIdentifier="MovesViewController" id="jaN-Xh-Fhl" customClass="MovesViewController" customModule="PokeDex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="INh-7f-jZf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="63f-Ww-10U">
+                                <rect key="frame" x="0.0" y="93" width="414" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="mRt-oL-ubn"/>
+                        <constraints>
+                            <constraint firstItem="AAx-A1-irx" firstAttribute="trailing" secondItem="63f-Ww-10U" secondAttribute="trailing" id="FqG-oi-E1G"/>
+                            <constraint firstItem="63f-Ww-10U" firstAttribute="leading" secondItem="AAx-A1-irx" secondAttribute="leading" id="K4U-Td-yVR"/>
+                            <constraint firstItem="63f-Ww-10U" firstAttribute="top" secondItem="AAx-A1-irx" secondAttribute="top" constant="5" id="jx2-T4-iBA"/>
+                            <constraint firstItem="AAx-A1-irx" firstAttribute="bottom" secondItem="63f-Ww-10U" secondAttribute="bottom" constant="5" id="mz9-rD-YhW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AAx-A1-irx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jFU-nW-TMt"/>
+                    <navigationItem key="navigationItem" title="Moves" id="jFU-nW-TMt"/>
+                    <connections>
+                        <outlet property="tableView" destination="63f-Ww-10U" id="Upk-ps-Xgx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gH-rj-841" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,9 +126,10 @@
         <!--Pokemon-->
         <scene sceneID="wwv-4c-kpu">
             <objects>
-                <navigationController navigationBarHidden="YES" id="cTX-Ae-NQD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pokemon" id="vdI-mu-o8i"/>
+                <navigationController id="cTX-Ae-NQD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pokemon" image="tabbar.pokemon" selectedImage="tabbar.pokemon" id="vdI-mu-o8i"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Jk-Vh-yZf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -106,21 +140,41 @@
             </objects>
             <point key="canvasLocation" x="-536" y="-1058"/>
         </scene>
-        <!--Pokemons View Controller-->
+        <!--Pokemon-->
         <scene sceneID="0Xo-Lo-waY">
             <objects>
                 <viewController storyboardIdentifier="PokemonsViewController" id="65b-Ui-Ey9" customClass="PokemonsViewController" customModule="PokeDex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I0X-As-0Of">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fUV-MA-gIv">
+                                <rect key="frame" x="0.0" y="93" width="414" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="o5U-kG-NWi"/>
+                        <constraints>
+                            <constraint firstItem="2Ib-xD-KHZ" firstAttribute="bottom" secondItem="fUV-MA-gIv" secondAttribute="bottom" constant="5" id="1SB-Pu-Dgy"/>
+                            <constraint firstItem="fUV-MA-gIv" firstAttribute="top" secondItem="2Ib-xD-KHZ" secondAttribute="top" constant="5" id="6Bz-ht-eJF"/>
+                            <constraint firstItem="fUV-MA-gIv" firstAttribute="leading" secondItem="2Ib-xD-KHZ" secondAttribute="leading" id="Rdz-eN-eGP"/>
+                            <constraint firstItem="2Ib-xD-KHZ" firstAttribute="trailing" secondItem="fUV-MA-gIv" secondAttribute="trailing" id="nXk-r7-9Or"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Ib-xD-KHZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YFu-hW-3YB"/>
+                    <navigationItem key="navigationItem" title="Pokemon" id="YFu-hW-3YB"/>
+                    <connections>
+                        <outlet property="tableView" destination="fUV-MA-gIv" id="4IT-gB-rKT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86i-mm-Rot" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="412" y="-1058"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabbar.items" width="28" height="28"/>
+        <image name="tabbar.moves" width="26" height="26"/>
+        <image name="tabbar.pokemon" width="29" height="29"/>
+    </resources>
 </document>

@@ -19,6 +19,7 @@ protocol ItemsDisplayLogic: class {
 class ItemsViewController: BaseViewController, ItemsDisplayLogic {
     var interactor: ItemsBusinessLogic?
     var router: (NSObjectProtocol & ItemsRoutingLogic & ItemsDataPassing)?
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: Setup
     
@@ -51,6 +52,8 @@ class ItemsViewController: BaseViewController, ItemsDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackgroundImage(image: UIImage(named: "background.gradient"))
+        tableView.tableFooterView = UIView()
         setup()
     }
     
