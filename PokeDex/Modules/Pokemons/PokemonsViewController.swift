@@ -51,6 +51,7 @@ class PokemonsViewController: BaseViewController, PokemonsDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackgroundImage(image: UIImage(named: "background.gradient"))
         setup()
     }
     

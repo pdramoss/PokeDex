@@ -63,7 +63,7 @@ class PokemonsViewControllerTests: XCTestCase {
         sut.interactor = spy
         
         // When
-        loadView()
+        sut.doSomething()
         
         // Then
         XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
