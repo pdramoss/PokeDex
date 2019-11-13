@@ -16,10 +16,13 @@ protocol PokemonsDisplayLogic: class {
     func displaySomething(viewModel: Pokemons.Something.ViewModel)
 }
 
-class PokemonsViewController: BaseViewController, PokemonsDisplayLogic {
+class PokemonsViewController: BaseViewController {
     var interactor: PokemonsBusinessLogic?
     var router: (NSObjectProtocol & PokemonsRoutingLogic & PokemonsDataPassing)?
     @IBOutlet private weak var tableView: UITableView!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
     // MARK: Setup
     
     private func setup() {
@@ -33,7 +36,16 @@ class PokemonsViewController: BaseViewController, PokemonsDisplayLogic {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+        setupSearchController()
         doSomething()
+    }
+    
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     // MARK: Routing
@@ -64,8 +76,16 @@ class PokemonsViewController: BaseViewController, PokemonsDisplayLogic {
         let request = Pokemons.Something.Request()
         interactor?.doSomething(request: request)
     }
+}
+extension PokemonsViewController: PokemonsDisplayLogic {
     
     func displaySomething(viewModel: Pokemons.Something.ViewModel) {
         //nameTextField.text = viewModel.name
+    }
+}
+
+extension PokemonsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }

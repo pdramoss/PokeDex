@@ -16,10 +16,12 @@ protocol MovesDisplayLogic: class {
     func displaySomething(viewModel: Moves.Something.ViewModel)
 }
 
-class MovesViewController: BaseViewController, MovesDisplayLogic {
+class MovesViewController: BaseViewController {
     var interactor: MovesBusinessLogic?
     var router: (NSObjectProtocol & MovesRoutingLogic & MovesDataPassing)?
     @IBOutlet private weak var tableView: UITableView!
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: Setup
     
@@ -34,7 +36,16 @@ class MovesViewController: BaseViewController, MovesDisplayLogic {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+        setupSearchController()
         doSomething()
+    }
+    
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     // MARK: Routing
@@ -65,8 +76,16 @@ class MovesViewController: BaseViewController, MovesDisplayLogic {
         let request = Moves.Something.Request()
         interactor?.doSomething(request: request)
     }
-    
+}
+
+extension MovesViewController: MovesDisplayLogic {
     func displaySomething(viewModel: Moves.Something.ViewModel) {
         //nameTextField.text = viewModel.name
+    }
+}
+
+extension MovesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }

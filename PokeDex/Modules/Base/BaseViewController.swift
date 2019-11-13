@@ -24,7 +24,12 @@ class BaseViewController: UIViewController {
         
         view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.frame = view.bounds
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
         imageView.image = image
         view.sendSubviewToBack(imageView)
     }
