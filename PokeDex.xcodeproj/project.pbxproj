@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E535DB66238D857100D3730E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E535DB65238D857100D3730E /* Lottie */; };
 		E5764AD62361351C00CA390C /* PokemonStatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5764AD52361351C00CA390C /* PokemonStatResponse.swift */; };
 		E57C96DC237A0F7600C27101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57C96DB237A0F7600C27101 /* Main.storyboard */; };
 		E57C96E0237A10E900C27101 /* ImagesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57C96DF237A10E900C27101 /* ImagesAssets.xcassets */; };
@@ -85,7 +86,7 @@
 		E5D5A34B2360C9AC00DA6D92 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A3492360C9AC00DA6D92 /* HomeTableViewCell.swift */; };
 		E5D5A34C2360C9AC00DA6D92 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D5A34A2360C9AC00DA6D92 /* HomeTableViewCell.xib */; };
 		E5D5A3512360CF0400DA6D92 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A3502360CF0400DA6D92 /* NibView.swift */; };
-		E5D5A3542360D1E200DA6D92 /* Int-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A3532360D1E200DA6D92 /* Int-Extension.swift */; };
+		E5D5A3542360D1E200DA6D92 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5A3532360D1E200DA6D92 /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,7 +182,7 @@
 		E5D5A3492360C9AC00DA6D92 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		E5D5A34A2360C9AC00DA6D92 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		E5D5A3502360CF0400DA6D92 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
-		E5D5A3532360D1E200DA6D92 /* Int-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int-Extension.swift"; sourceTree = "<group>"; };
+		E5D5A3532360D1E200DA6D92 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E535DB66238D857100D3730E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +568,7 @@
 		E5D5A3522360D1D300DA6D92 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E5D5A3532360D1E200DA6D92 /* Int-Extension.swift */,
+				E5D5A3532360D1E200DA6D92 /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -588,6 +590,7 @@
 			);
 			name = PokeDex;
 			packageProductDependencies = (
+				E535DB65238D857100D3730E /* Lottie */,
 			);
 			productName = PokeDex;
 			productReference = E591EABB23581DDF00C67BAD /* PokeDex.app */;
@@ -640,6 +643,7 @@
 			);
 			mainGroup = E591EAB223581DDF00C67BAD;
 			packageReferences = (
+				E535DB64238D857100D3730E /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = E591EABC23581DDF00C67BAD /* Products */;
 			projectDirPath = "";
@@ -688,7 +692,7 @@
 				E587BF742360E1070030B998 /* DetailPokemonRouter.swift in Sources */,
 				E591EB0623596DA900C67BAD /* EndPointType.swift in Sources */,
 				E57C9714237A1F0F00C27101 /* ItemsRouter.swift in Sources */,
-				E5D5A3542360D1E200DA6D92 /* Int-Extension.swift in Sources */,
+				E5D5A3542360D1E200DA6D92 /* Int+Extension.swift in Sources */,
 				E5D5A327235FD19F00DA6D92 /* HomeRouter.swift in Sources */,
 				E57C9713237A1F0F00C27101 /* ItemsWorker.swift in Sources */,
 				E5D5A329235FD19F00DA6D92 /* HomeViewController.swift in Sources */,
@@ -1021,6 +1025,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E535DB64238D857100D3730E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E535DB65238D857100D3730E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E535DB64238D857100D3730E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E591EAB323581DDF00C67BAD /* Project object */;
 }

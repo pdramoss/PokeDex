@@ -1,5 +1,5 @@
 //
-//  Int-Extension.swift
+//  Int+Extension.swift
 //  PokeDex
 //
 //  Created by Pedro Ramos on 23/10/19.
